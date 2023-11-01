@@ -1,5 +1,6 @@
 package com.bnta.task01_names.controllers;
 
+import com.bnta.task01_names.models.Celebration;
 import com.bnta.task01_names.models.Greeting;
 import org.springframework.web.bind.annotation.GetMapping;
 import org.springframework.web.bind.annotation.RequestMapping;
@@ -13,6 +14,11 @@ public class GreetingController {
     @GetMapping// GET localhost:8080/greeting
     public Greeting newGreeting(@RequestParam (defaultValue = "") String name,@RequestParam (defaultValue = "") String timeOfDay){
         return new Greeting(name, timeOfDay);
+    }
+
+    @GetMapping(value = "/christmas")
+    public Celebration newcelebration(){
+        return new Celebration("Merry Christmas!");
     }
 
 }
